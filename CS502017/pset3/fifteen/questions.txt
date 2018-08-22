@@ -1,0 +1,4 @@
+0. The smallest dimension possible is 3 x 3 and the biggest dimension possible is 9 x 9. 
+1. "int" is used to represent the data structure of the board.
+2. The function "greet()" is called to greet the user.
+3. The function that are needed to be implemented are: init, draw, move, and won.

@@ -1,0 +1,16 @@
+1.  To ensure that the size of that int or other data types will be same size on any system (a 32-bit int on a 32-bit system will be still a 32 bit int on a 64-bit system.
+2.  To tell how many bits you want that variable to store.
+3.  BYTE == 1 byte
+    DWORD == 4 bytes
+    LONG == 4 bytes
+    WORD == 2 bytes
+4.  The first two bytes of any BMP file has to be 0x4d42 in hex or BM in ASCII.
+5.  The "bfSize" variable contains the size of the bitmap file.
+    The "biSize" variable is the number of bytes required by the structure.
+6.  The bitmap is a top-down DIB.
+7.  The biBitcount variable.
+8.  The file isn't in the directory or couldn't open it.
+9.  Because the person who wrote this program wants to only read the first int of that file.
+10. 3 bytes
+11. Allows you to jump to a certain point of the file.
+12. SEEK_CUR is used with in with seekf to start where the 2nd argument tell it to start from.

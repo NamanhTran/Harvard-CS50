@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }}
+{% endblock %}
+
+{% block main %}
+    <h3>
+        The price of {{  temp.symbol }} is {{  temp.price|usd  }}
+    </h3>
+{% endblock %}

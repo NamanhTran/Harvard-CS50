@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }}
+{% endblock %}
+
+{% block main %}
+    <h3>
+        Your Transaction:<br>
+        {{ stock_info.symbol  }}: {{  stock_info.price|usd  }} x {{  amount }} = {{  (stock_info.price * amount)|usd  }}
+    </h3>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    History
+
+{% endblock %}
+
+{% block main %}
+Your Stock History
+<table class="table">
+    <thead>
+        <th scope="col">Stock</th>
+        <th scope="col">Action</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Balance</th>
+        <th scope="col">Date</th>
+    </thead>
+    <tbody>
+        {% for row in rows %}
+            <tr>
+                <th scope="row">{{  row["stock"]  }}</th>
+                <td>{{  row["action"]  }}</td>
+                <td>{{  row["amount"]  }}</td>
+                <td>{{  row["balance"]|usd  }}</td>
+                <td>{{  row["date"]  }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

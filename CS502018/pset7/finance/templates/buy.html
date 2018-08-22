@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotes
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="form-group">
+
+            <label for="symbol_input">Enter a stock symbol to buy</label>
+            <input type="text" name="symbol" class="form-control" placeholder="ex. GOOG"/>
+            <input type="text" name="shares" class="form-control" placeholder="Enter amount to buy"/>
+            <button class="btn btn-primary" type="submit">Buy Stock(s)</button>
+
+        </div>
+    </form>
+{% endblock %}

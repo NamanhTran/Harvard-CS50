@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quotes
+{% endblock %}
+
+{% block main %}
+    <form action="/quote" method="post">
+        <div class="form-group">
+
+            <label for="symbol_input">Enter a stock symbol to check their price:</label>
+            <input type="text" name="symbol" class="form-control" id="formGroupExampleInput" placeholder="ex. GOOG"/>
+            <button class="btn btn-primary" type="submit">Get Quote</button>
+
+        </div>
+    </form>
+{% endblock %}

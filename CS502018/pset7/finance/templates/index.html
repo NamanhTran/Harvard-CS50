@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+    Portfolio
+
+{% endblock %}
+
+{% block main %}
+
+<h1>Your Portfolio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Stock Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">TOTAL</th>
+        </tr>
+        {% set total = [0] %}
+        {% for row in rows %}
+            <tr>
+                <th scope="row">{{  row["stock"]  }}</th>
+                <th scope="row">{{  row["SUM(amount)"]  }}</th>
+                <th scope="row">{{  price[loop.index0]["price"]|usd  }}</th>
+                <th scope="row">{{  (row["SUM(amount)"] * price[loop.index0]["price"])|usd  }}</th>
+                {% if total.append(total.pop() + row["SUM(amount)"] * price[loop.index0]["price"]) %}{% endif %}
+            </tr>
+        {% endfor %}
+        <tr>
+            <th scope="row">CASH</th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">{{  balance[0]["cash"]|usd  }}</th>
+            {% if total.append(total.pop() + balance[0]["cash"]) %}{% endif %}
+        </tr>
+        <tr>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row"></th>
+            <th scope="row">{{  total[0]|usd  }}</th>
+        </tr>
+    </thead>
+
+
+</table>
+
+{% endblock %}
